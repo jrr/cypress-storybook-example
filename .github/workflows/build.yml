@@ -17,6 +17,12 @@ jobs:
       - name: yarn
         run: yarn install --immutable --immutable-cache
 
+      - name: cypress info
+        run: |
+          yarn run cypress install
+          yarn cy:verify
+          yarn cy:info
+
       - name: tsc
         run: yarn run tsc
 
