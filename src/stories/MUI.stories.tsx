@@ -58,5 +58,17 @@ const Template: Story<{ page: MuiExample }> = (args) => {
   }
 }
 
+/*
+
+TODO:
+
+find a way to mass-import a bunch of MUI components. start with their docs?
+
+https://github.com/mui-org/material-ui/tree/next/docs/src/pages/components
+
+https://github.com/mui-org/material-ui/blob/next/docs/src/pages.ts
+
+ */
+
 export const FloatingActionButtons = Template.bind({}, { page: "fab" });
 export const ButtonGroups = Template.bind({}, { page: "buttongroup" });
