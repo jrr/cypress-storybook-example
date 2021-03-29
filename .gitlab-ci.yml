@@ -1,0 +1,14 @@
+image: node:14.16.0
+
+test:
+  stage: test
+  image: cypress/browsers:node14.16.0-chrome89-ff86
+  script: |
+    yarn install --immutable --immutable-cache
+    yarn run cypress install
+    yarn run cypress verify
+    yarn run cypress info
+    yarn run tsc
+    yarn run build-storybook
+    yarn test-storybook
+    yarn cy:run

@@ -20,8 +20,8 @@ jobs:
       - name: cypress info
         run: |
           yarn run cypress install
-          yarn cy:verify
-          yarn cy:info
+          yarn run cypress verify
+          yarn run cypress info
 
       - name: tsc
         run: yarn run tsc
