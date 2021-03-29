@@ -27,5 +27,8 @@ jobs:
       - name: build storybook
         run: yarn run build-storybook
 
-      - name: test
-        run: yarn run cypress run --config video=false
+      - name: test (storybook)
+        run: yarn test-storybook
+
+      - name: test (default cypress suite)
+        run: yarn cy:run
