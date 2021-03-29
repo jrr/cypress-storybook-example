@@ -21,8 +21,11 @@ jobs:
       - name: yarn install
         run: yarn install
 
-      - name: tsc
-        run: yarn run tsc
+      # - name: tsc
+      #   run: yarn run tsc
 
-      - name: build storybook
-        run: yarn run build-storybook
+      # - name: build storybook
+      #   run: yarn run build-storybook
+
+      - name: test
+        run: yarn run cypress run --config video=false
