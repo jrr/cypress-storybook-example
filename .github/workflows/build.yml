@@ -8,6 +8,12 @@ jobs:
 
     container:
       image: cypress/browsers:node14.16.0-chrome89-ff86
+      env:
+        # Use polling watcher to avoid error:
+        #   Error from chokidar (...): Error: ENOSPC: System limit for number of file watchers reached, watch '...'
+        # (this despite the fact that react-scripts shouldn't be watching at all when CI=true, as it is here)
+        # https://create-react-app.dev/docs/advanced-configuration/
+        CHOKIDAR_USEPOLLING: "true"
 
     steps:
       - uses: actions/setup-node@v2.1.5
