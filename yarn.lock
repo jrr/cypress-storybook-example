@@ -7513,9 +7513,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:6.6.0":
-  version: 6.6.0
-  resolution: "cypress@npm:6.6.0"
+"cypress@npm:6.7.1":
+  version: 6.7.1
+  resolution: "cypress@npm:6.7.1"
   dependencies:
     "@cypress/listr-verbose-renderer": ^0.4.1
     "@cypress/request": ^2.88.5
@@ -7559,7 +7559,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 669a9aea6b8b195fe2d41c599722f8fe65356f99b3f4a4d0acec87b49089dc9fd2beb39ad682c7b83b0ee403d511f0bcf5cb8f1b156a11e49ad2db376656b0b4
+  checksum: 67619256f62900d99115e590895d8214d6bd94aae329f1a67779d2cb1a1dccbf690f5644c2efd9540626cb4e651ffdc75bc4d4c0c86a0dc61896c800869cdf71
   languageName: node
   linkType: hard
 
@@ -13586,7 +13586,7 @@ fsevents@^1.2.7:
     "@types/node": ^14.14.37
     "@types/react": ^17.0.3
     "@types/react-dom": ^17.0.3
-    cypress: 6.6.0
+    cypress: 6.7.1
     cypress-terminal-report: ^3.0.2
     react: ^17.0.2
     react-dom: ^17.0.2
