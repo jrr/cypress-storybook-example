@@ -24,7 +24,7 @@
     "storybook": "DISABLE_ESLINT_PLUGIN=true start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "storybook-for-test": "DISABLE_ESLINT_PLUGIN=true start-storybook --quiet -p 9009 -s public --ci",
-    "cy:run": "cypress run --browser chrome",
+    "cy:run": "cypress run --browser chrome --headless",
     "cy:run:storybook": "cypress run --browser chrome --headless -C cypress.storybook.json",
     "cy:open:storybook": "cypress open -C cypress.storybook.json",
     "test-storybook": "START_SERVER_AND_TEST_INSECURE=1 yarn start-server-and-test storybook-for-test http://localhost:9009 cy:run:storybook"
