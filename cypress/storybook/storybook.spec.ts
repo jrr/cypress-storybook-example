@@ -29,7 +29,7 @@ describe("Storybook", () => {
     // Count how many items are in the left-side nav.
     // This is tricky because of the hierarchy.
     cy.get("#storybook-explorer-tree [data-nodetype]", {
-      timeout: 2 * 60 * 1000,
+      timeout: 3 * 60 * 1000,
     }).should("have.length.greaterThan", EXPECTED.NUM_NAV_ITEMS);
 
     walk("", "", 1);

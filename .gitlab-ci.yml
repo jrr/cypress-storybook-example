@@ -18,3 +18,7 @@ test:
     - yarn run build-storybook
     - yarn test-storybook
     - "yarn cy:run"
+  artifacts:
+    when: always
+    paths:
+      - cypress/screenshots
