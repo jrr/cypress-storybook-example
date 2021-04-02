@@ -59,7 +59,7 @@
     "@storybook/node-logger": "^6.2.2",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.2",
-    "cypress": "6.6.0",
+    "cypress": "https://cdn.cypress.io/beta/npm/6.9.0/circle-develop-358628f3b353e6a4f6d88d44f4fb6a403155c129/cypress.tgz",
     "cypress-terminal-report": "^3.0.2",
     "start-server-and-test": "^1.12.1"
   },
