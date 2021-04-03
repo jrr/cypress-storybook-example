@@ -32,13 +32,22 @@ describe("Storybook", () => {
       timeout: 3 * 60 * 1000,
     }).should("have.length.greaterThan", EXPECTED.NUM_NAV_ITEMS);
 
-    walk("", "", 1);
+    walk("", "", 1, now());
   });
 });
 
-function walk(oldUrl: string, oldStoryName: string, count: number) {
+const now = () => +new Date();
+
+function walk(
+  oldUrl: string,
+  oldStoryName: string,
+  count: number,
+  time: number
+) {
   cy.url().then((newUrl) => {
-    cy.log(`${count} - ${newUrl}`);
+    const duration = now() - time;
+    const url = newUrl.replace(/.*=/, "");
+    cy.log(`visited page #${count} (${url}) in ${duration} ms.`);
     storyRendersSuccessfully();
 
     if (newUrl === oldUrl) {
@@ -54,7 +63,7 @@ function walk(oldUrl: string, oldStoryName: string, count: number) {
         .then((e) => {
           const newStoryName = e.text();
           cy.get("body").type("{alt}{rightarrow}");
-          walk(newUrl, newStoryName, count + 1);
+          walk(newUrl, newStoryName, count + 1, now());
         });
     }
   });
