@@ -22,7 +22,7 @@ module.exports = (on, config) => {
   require("cypress-terminal-report/src/installLogsPrinter")(on, {
     printLogsToConsole: "always",
   });
-  const dim = { w: 1280, h: 720 };
+  const dim = { w: 3840, h: 2160 };
 
   on("before:browser:launch", (browser, launchOptions) => {
     // https://docs.cypress.io/api/plugins/browser-launch-api#Set-screen-size-when-running-headless
