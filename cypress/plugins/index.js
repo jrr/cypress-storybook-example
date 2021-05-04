@@ -22,13 +22,14 @@ module.exports = (on, config) => {
   require("cypress-terminal-report/src/installLogsPrinter")(on, {
     printLogsToConsole: "always",
   });
+  const dim = { w: 1280, h: 720 };
 
   on("before:browser:launch", (browser, launchOptions) => {
     // https://docs.cypress.io/api/plugins/browser-launch-api#Set-screen-size-when-running-headless
     if (browser.name === "chrome" && browser.isHeadless) {
       // fullPage screenshot size is 1400x1200 on non-retina screens
       // and 2800x2400 on retina screens
-      launchOptions.args.push("--window-size=1280,720");
+      launchOptions.args.push(`--window-size=${dim.w},${dim.h}`);
 
       // force screen to be non-retina (1400x1200 size)
       launchOptions.args.push("--force-device-scale-factor=1");
@@ -39,15 +40,15 @@ module.exports = (on, config) => {
 
     if (browser.name === "electron" && browser.isHeadless) {
       // fullPage screenshot size is 1400x1200
-      launchOptions.preferences.width = 1280;
-      launchOptions.preferences.height = 720;
+      launchOptions.preferences.width = dim.w;
+      launchOptions.preferences.height = dim.h;
     }
 
     if (browser.name === "firefox" && browser.isHeadless) {
       // menubars take up height on the screen
       // so fullPage screenshot size is 1400x1126
-      launchOptions.args.push("--width=1280");
-      launchOptions.args.push("--height=720");
+      launchOptions.args.push(`--width=${dim.w}`);
+      launchOptions.args.push(`--height=${dim.h}`);
     }
 
     return launchOptions;
